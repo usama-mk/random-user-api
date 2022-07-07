@@ -1,38 +1,55 @@
-.App {
+.app {
+  min-height: 2400px;
   text-align: center;
+  padding-top: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.col-sm-6 {
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 480px) and (max-width: 991px) {
+  .app {
+    min-height: 1300px;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }  
+}
+@media (min-width: 992px) {
+  .app {
+    min-height: 1000px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.thumbnail {
+  padding-top: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.pagination a {
+  min-width: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pagination > .active > a {
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.pagination > li > a:focus {
+  color: #337ab7;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.shadow-light {
+  box-shadow: 0px 3px 3px 0px rgba(2, 2, 2, 0.2);
+}
+
+.author {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
