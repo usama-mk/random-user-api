@@ -3,6 +3,7 @@ import '../../app.css';
 import {range} from '../../helpers';
 import Card from '../../Card';
 import Pagination from '../../Pagination';
+import { Form } from 'react-bootstrap';
 
 
 export default class Users extends Component {
@@ -76,6 +77,16 @@ export default class Users extends Component {
       <div className="app">        
         <div className="container">
           <h3>ReactJS, Fetch API, Random User Generator, Pagination</h3>
+
+          <Form className="d-flex">
+              <Form.Control
+                type="text"
+                name="search"
+                onChange={(e) => {}}
+                placeholder="Search Products..."
+                className="mr-sm-1 ml-sm-5"
+              ></Form.Control>
+            </Form>
 
           <Pagination
             updatePage={this.updatePage}
