@@ -7,6 +7,20 @@ function Profile() {
         const location = useLocation();
     const individualUserIndex = location.state.userIndex;
     const individualUser = location.state.userInfo;
+    console.log(location.state.userInfo)
+    const event = new Date(individualUser.dob.date);
+
+    var myBirthday, today, bday, diff, days;
+     
+myBirthday = [parseInt(event.getDate().toString()),parseInt(event.getMonth().toString())]; // 6th of February
+today = new Date();
+bday = new Date(today.getFullYear(),myBirthday[1]-1,myBirthday[0]);
+if( today.getTime() > bday.getTime()) {
+    bday.setFullYear(bday.getFullYear()+1);
+}
+diff = bday.getTime()-today.getTime();
+days = Math.floor(diff/(1000*60*60*24));
+
   return (
     <div style={{display:'flex', justifyContent:'center', alignItems: 'center', height: '100vh'}} >
          <div style={{padding: '20px'}} className="col-md-8 col-sm-6 col-xs-12 shadow-light  ">
@@ -17,6 +31,9 @@ function Profile() {
           <h5>{toTitleCase(`${individualUser.location.city}, ${individualUser.location.state}`)} <br/>
             {individualUser.location.street.name}
           </h5>
+          <h5>Age: {individualUser.dob.age} </h5>
+          <h5>Month: {event.getMonth()}, Year: {event.getFullYear()}, Date: {event.getDate()} </h5>
+          <h5>Days in birthday: {days} </h5>
           <h5><span className="glyphicon glyphicon-phone" aria-hidden="true"></span> {individualUser.phone}</h5>              
           <a href={`mailto:${individualUser.email}`} target="_top"><span className="btn btn-info glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
         </div>
