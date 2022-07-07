@@ -55,7 +55,7 @@ export default class Users extends Component {
       console.log(item.item)
       return(
        
-            <Card gender={item.item.gender} picture={item.item.picture} name={item.item.name} location={item.item.location} phone={item.item.phone} email={item.item.email} setProfileClicked={setProfileClicked} user={item.item} index={index} />
+            <Card gender={item.item.gender} picture={item.item.picture} name={item.item.name} location={item.item.location} phone={item.item.phone} email={item.item.email}  user={item.item} index={index} />
          
       )
     }

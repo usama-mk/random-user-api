@@ -1,10 +1,40 @@
+import React from 'react'
+import { useLocation, useNavigate } from "react-router-dom";
+
+import {capitalizeFirstLetter, toTitleCase} from  '../../helpers'
+
+function Profile() {
+        const location = useLocation();
+    const individualUserIndex = location.state.userIndex;
+    const individualUser = location.state.userInfo;
+  return (
+    <div style={{display:'flex', justifyContent:'center', alignItems: 'center', height: '100vh'}} >
+         <div style={{padding: '20px'}} className="col-md-8 col-sm-6 col-xs-12 shadow-light  ">
+      <div className="text-center ">
+        <img src={individualUser.picture.large} className="img-circle shadow-light" alt=".." />
+        <div className="caption text-center ">
+          <h3>{capitalizeFirstLetter(individualUser.name.first)} {capitalizeFirstLetter(individualUser.name.last)}</h3>
+          <h5>{toTitleCase(`${individualUser.location.city}, ${individualUser.location.state}`)} <br/>
+            {individualUser.location.street.name}
+          </h5>
+          <h5><span className="glyphicon glyphicon-phone" aria-hidden="true"></span> {individualUser.phone}</h5>              
+          <a href={`mailto:${individualUser.email}`} target="_top"><span className="btn btn-info glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  )
+}
+
+export default Profile
+
+
+
+
 // import React, { useEffect, useState } from 'react';
 // import { useLocation, useNavigate } from "react-router-dom";
 // import Button from '@material-ui/core/Button';
-// import Container from '@material-ui/core/Container';
-// import Card from '@material-ui/core/Card';
-// import { makeStyles } from '@material-ui/core/styles';
-// import { CardContent } from '@material-ui/core';
+
 
 
 // const useStyles = makeStyles((theme) => ({

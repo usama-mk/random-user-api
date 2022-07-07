@@ -7,17 +7,20 @@ export default function Card({picture, name, location, phone, email, setProfileC
 
   const navigate= useNavigate()
   const handleCardClick=()=>{
-    alert('asd')
+  
       let selectedUser = user;
       let selectedUserIndex = index;
+      
       navigate('/profile',{state: {
         userInfo: selectedUser,
         userIndex: selectedUserIndex
     }});
+
+   
    
   }
   return (
-    <div onClick={handleCardClick} className="col-md-4 col-sm-6 col-xs-12">
+    <div   className="col-md-4 col-sm-6 col-xs-12">
       <div className="thumbnail">
         <img src={picture.large} className="img-circle shadow-light" alt=".." />
         <div className="caption">
